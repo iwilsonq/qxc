@@ -33,7 +33,6 @@ export default {
   },
   mounted() {
     this.api('This is a message')
-    // this.api().then(val => console.log(val))
   },
 }
 </script>
