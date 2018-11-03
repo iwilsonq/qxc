@@ -6,21 +6,27 @@
         {{i}}
       </li>
     </ul>
+    <b-field label="name">
+      <b-input v-model="name"></b-input>
+    </b-field>
   </div>
 </template>
 
 <script>
 export default {
   name: 'vueDemo',
+  data: () => ({
+    name: '',
+  }),
   props: {
     data: {
       type: Array,
-      default: []
+      default: [],
     },
     api: {
       type: Function,
-      default: () => {}
-    }
+      default: () => {},
+    },
   },
   created() {
     this.$emit('Booo', this.data)
@@ -28,13 +34,13 @@ export default {
   mounted() {
     this.api('This is a message')
     // this.api().then(val => console.log(val))
-  }
+  },
 }
 </script>
 
 <style>
-  .my-list {
-    list-style: none;
-  }
+.my-list {
+  list-style: none;
+}
 </style>
 
