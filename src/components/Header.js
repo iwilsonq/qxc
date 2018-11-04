@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import styled from 'react-emotion'
-import netlifyIdentity from 'netlify-identity-widget'
 
-class Header extends React.Component {
+export class Header extends Component {
   componentDidMount() {
-    netlifyIdentity.init(user => console.log(user))
+    window.netlifyIdentity.on('init', user => console.log('init', user))
   }
 
   handleIdentity = e => {
     e.preventDefault()
-    netlifyIdentity.open()
+    window.netlifyIdentity.open()
+  }
+
+  loginUser = () => {
+    console.log('loginUser')
   }
 
   render() {
@@ -22,9 +25,11 @@ class Header extends React.Component {
             <h1 style={{ margin: 0 }}>
               <MainLink to="/">{siteTitle}</MainLink>
             </h1>
-            <LoginButton onClick={this.handleIdentity} className="button">
-              Login
-            </LoginButton>
+            <div>
+              <LoginButton onClick={this.handleIdentity} className="button">
+                Login
+              </LoginButton>
+            </div>
           </LinkContainer>
         </div>
       </Wrap>
