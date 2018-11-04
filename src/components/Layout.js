@@ -7,6 +7,9 @@ import Header from './Header'
 import './Layout.css'
 import 'bulma/css/bulma.css'
 
+import netlifyIdentity from 'netlify-identity-widget'
+netlifyIdentity.init()
+
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`

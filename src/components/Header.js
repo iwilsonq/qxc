@@ -3,6 +3,14 @@ import { Link } from 'gatsby'
 
 import styled from 'react-emotion'
 
+import netlifyIdentity from 'netlify-identity-widget'
+
+const toggleLogin = e => {
+  e.preventDefault()
+
+  netlifyIdentity.open()
+}
+
 const Header = ({ siteTitle }) => (
   <Wrap>
     <div className="container">
@@ -10,7 +18,9 @@ const Header = ({ siteTitle }) => (
         <h1 style={{ margin: 0 }}>
           <MainLink to="/">{siteTitle}</MainLink>
         </h1>
-        <MainLink to="/">Login</MainLink>
+        <LoginButton onClick={toggleLogin} className="button">
+          Login
+        </LoginButton>
       </LinkContainer>
     </div>
   </Wrap>
@@ -31,6 +41,15 @@ const LinkContainer = styled('div')`
 const MainLink = styled(Link)`
   padding: 16px 0;
   display: block;
+  color: #fff;
+  font-family: 'BayerUniversal';
+  font-size: 35px;
+`
+
+const LoginButton = styled('button')`
+  padding: 16px 0;
+  border: none;
+  background: none;
   color: #fff;
   font-family: 'BayerUniversal';
   font-size: 35px;
