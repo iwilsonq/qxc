@@ -64,6 +64,9 @@ const MainLink = styled(Link)`
   color: #fff;
   font-family: 'BayerUniversal';
   font-size: 35px;
+  &:hover {
+    color: #fff;
+  }
 `
 
 const LoginButton = styled('button')`
@@ -73,4 +76,7 @@ const LoginButton = styled('button')`
   color: #fff;
   font-family: 'BayerUniversal';
   font-size: 35px;
+  &:hover {
+    color: #fff;
+  }
 `

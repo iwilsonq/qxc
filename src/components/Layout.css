@@ -647,7 +647,3 @@ button.button {
 button.button.is-danger {
   background: #c02121;
 }
-
-button.button.is-danger:hover {
-  background: #df3c3c;
-}
