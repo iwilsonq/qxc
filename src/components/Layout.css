@@ -605,12 +605,10 @@ tt,
 code {
   background-color: hsla(0, 0%, 0%, 0.04);
   border-radius: 3px;
-  <<<<<<<headfont-family: 'SFMono-Regular', Consolas, 'Roboto Mono',
-    'Droid Sans Mono', 'Liberation Mono', Menlo, Courier, monospace;
-  =======font-family: Arial, Helvetica, sans-serif, 'SFMono-Regular', Consolas,
+  font-family: Arial, Helvetica, sans-serif, 'SFMono-Regular', Consolas,
     'Roboto Mono', 'Droid Sans Mono', 'Liberation Mono', Menlo, Courier,
     monospace;
-  >>>>>>>33f6097db4e788dbf59e041b1903b5da774be928padding: 0;
+  padding: 0;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
 }
