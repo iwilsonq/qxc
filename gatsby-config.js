@@ -1,9 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'QXC',
+    title: 'pre-postmodern',
   },
   plugins: [
-    'gatsby-plugin-netlify-identity-widget',
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-filesystem`,
@@ -27,5 +26,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    'gatsby-plugin-netlify-identity-widget',
   ],
 }
