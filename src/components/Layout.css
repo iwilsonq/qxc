@@ -3,6 +3,11 @@
   src: url('../fonts/Bayer-Universal.ttf');
 }
 
+@font-face {
+  font-family: 'BodoniStd';
+  src: url('../fonts/BodoniStd.otf');
+}
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
