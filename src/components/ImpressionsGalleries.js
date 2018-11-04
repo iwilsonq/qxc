@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'react-emotion'
+import MapView from './MapView'
 import galleryImage from '../../assets/group.png'
 
 export class ImpressionsGalleries extends Component {
@@ -33,7 +34,13 @@ export class ImpressionsGalleries extends Component {
       <div className="container">
         <Wrap className="columns">
           <div className="column is-6">{this.renderGaleries()}</div>
-          <div className="column is-6">text</div>
+          <div className="column is-6">
+            <div
+              style={{ backgroundColor: '#000', width: '100%', height: '100%' }}
+            >
+              <MapView galleries={galleries} style={{ width: 100 }} />
+            </div>
+          </div>
         </Wrap>
       </div>
     )
