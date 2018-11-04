@@ -2,12 +2,13 @@
   <div v-if="activeURL">
     <div class="bar" :style="{width: progress}"/>
     <div class="container">
-      <div class="image-container">
-        <img class="image" :src="activeURL" :alt="activePiece && (activePiece.title || '')">
-        <!-- <div :style="{'background-image': `url(${activeURL})`}" class="image"/> -->
-      </div>
-      <div class="info">
-        <span class="title is-4">{{activePiece.title || ''}}</span>
+      <div class="captioned-image">
+        <div class="framed-image">
+          <img class="image" :src="activeURL" :alt="activePiece && (activePiece.title || '')">
+        </div>
+        <div class="info">
+          <span class="title is-3">{{activePiece.title || ''}}</span>
+        </div>
       </div>
       <div class="buttons">
         <div @click="clickHandler(false)" class="button--no">
@@ -23,7 +24,7 @@
 
 <script>
 function getUrl({title}) {
-  return `https://via.placeholder.com/925x476?text=${title}`
+  return `https://via.placeholder.com/900x400?text=${title}`
 }
 export default {
   name: 'exhibit',
@@ -78,6 +79,7 @@ export default {
 <style>
 .container {
   width: 100%;
+  max-width: 925px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -86,12 +88,12 @@ export default {
 }
 .buttons {
   margin-top: 110px;
-  width: 925px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.image-container {
+.framed-image {
   margin-top: 110px;
   width: 100%;
   background-color: black;
@@ -100,6 +102,7 @@ export default {
 .image {
   background-size: cover;
   margin: 0;
+  width: 100%;
 }
 .buttons svg {
   color: black;
@@ -112,6 +115,8 @@ export default {
 .info {
   margin-top: 10px;
   width: 100%;
+  font-family: 'BodoniStd';
+  /* font-size: 2rem !important; */
 }
 </style>
 
