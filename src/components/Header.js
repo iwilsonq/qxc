@@ -2,23 +2,20 @@ import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import styled from 'react-emotion'
 
-import netlifyIdentity from 'netlify-identity-widget'
-
 export class Header extends Component {
   componentDidMount() {
-    netlifyIdentity.init()
     netlifyIdentity.on('init', user => console.log('init', user))
-    // netlifyIdentity.on('login', user => this.setState({ user }, loginUser()))
   }
 
-  toggleLogin = e => {
+  handleIdentity = e => {
     e.preventDefault()
-
     netlifyIdentity.open()
   }
+
   loginUser = () => {
-    debugger
+    console.log('loginUser')
   }
+
   render() {
     const { siteTitle } = this.props
     return (
@@ -29,7 +26,7 @@ export class Header extends Component {
               <MainLink to="/">{siteTitle}</MainLink>
             </h1>
             <div>
-              <LoginButton onClick={this.toggleLogin} className="button">
+              <LoginButton onClick={this.handleIdentity} className="button">
                 Login
               </LoginButton>
             </div>
