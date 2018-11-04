@@ -19,6 +19,7 @@ type Piece = {
 
 type Gallery = {
   title: string
+  fullAddress: string
   lat: number
   lng: number
 }
@@ -30,3 +31,5 @@ type Impression = {
     // keys being pieceId and value being a score
   }
 }
+
+// q.Map(q.Paginate(q.Match(q.Index("all_piece"))),function(x){return q.Get(x)})
