@@ -1,16 +1,15 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import styled from 'react-emotion'
-import netlifyIdentity from 'netlify-identity-widget'
 
 export class Header extends Component {
   componentDidMount() {
-    netlifyIdentity.on('init', user => console.log('init', user))
+    window.netlifyIdentity.on('init', user => console.log('init', user))
   }
 
   handleIdentity = e => {
     e.preventDefault()
-    netlifyIdentity.open()
+    window.netlifyIdentity.open()
   }
 
   loginUser = () => {
