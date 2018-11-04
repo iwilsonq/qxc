@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'react-emotion'
+import axios from 'axios'
 
 const galleries = [
   {
@@ -7,6 +8,7 @@ const galleries = [
     title: 'Grand Gallery',
     fullAddress: '1238 Somestreet, San Francisco, CA',
     score: 3, // liked the most art from that gallery
+    pieces: [],
 
     lat: 37.7749,
     lng: 122.4194,
@@ -41,7 +43,19 @@ const galleries = [
 ]
 
 export class Impressions extends Component {
+  state = {
+    galleries: [],
+  }
+
+  componentDidMount() {
+    axios
+      .get('/.netlify/functions/impressions')
+      .then(response => console.log(response))
+      .then((response) => this.setState({ galleries: response }))
+  }
+
   render() {
+    console.log(`this.state.galleries`, this.state.galleries)
     return (
       <Wrap>
         <div>Mathced Galleries</div>
