@@ -4,7 +4,7 @@ import { VueInReact } from 'vuera'
 import Exhibit from '../components/Exhibit.vue'
 import { fetchPieces } from '../services/pieces'
 
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 const Comp = VueInReact(Exhibit)
 const data = ['react', 'vue', 'angular']
 
