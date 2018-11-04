@@ -49,9 +49,9 @@ export class ImpressionsGalleries extends Component {
   renderGaleries() {
     return galleries.map(g => {
       return (
-        <Gallery key={g.id}>
+        <Gallery key={g.galleryId}>
           <Title>
-            <TitleText className="subtitle is-5">{g.title}</TitleText>
+            <TitleText className="subtitle is-4">{g.title}</TitleText>
           </Title>
 
           <Info className="columns">
@@ -95,7 +95,9 @@ const Title = styled('div')`
   padding-bottom: 10px;
 `
 
-const TitleText = styled('h3')``
+const TitleText = styled('h3')`
+  font-family: 'BodoniStd';
+`
 
 const Gallery = styled('div')`
   margin-bottom: 40px;
@@ -111,6 +113,7 @@ const Phone = styled('div')`
 
 const Text = styled('p')`
   color: #979797;
+  font-family: 'BodoniStd';
 `
 
 const Image = styled('div')`
