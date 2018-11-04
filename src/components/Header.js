@@ -3,8 +3,13 @@ import { Link } from 'gatsby'
 import styled from 'react-emotion'
 
 export class Header extends Component {
+  state = {
+    user: null,
+  }
   componentDidMount() {
-    window.netlifyIdentity.on('init', user => console.log('init', user))
+    window.netlifyIdentity.on('init', user =>
+      this.setState({ user }, this.loginUser())
+    )
   }
 
   handleIdentity = e => {
@@ -18,6 +23,8 @@ export class Header extends Component {
 
   render() {
     const { siteTitle } = this.props
+    const { user } = this.state
+
     return (
       <Wrap>
         <div className="container">
@@ -26,8 +33,9 @@ export class Header extends Component {
               <MainLink to="/">{siteTitle}</MainLink>
             </h1>
             <div>
+              {user && <p>{user}</p>}
               <LoginButton onClick={this.handleIdentity} className="button">
-                Login
+                {!user ? 'Login' : 'Logout'}
               </LoginButton>
             </div>
           </LinkContainer>
