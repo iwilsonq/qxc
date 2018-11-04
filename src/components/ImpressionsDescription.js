@@ -4,27 +4,19 @@ import img from '../../assets/1.jpg'
 
 export class ImpressionsDescription extends Component {
   render() {
+    const { image, title, description } = this.props
     return (
       <Wrap className="container">
         <Title>
-          <TitleText className="title is-1">Impressionism</TitleText>
+          <TitleText className="title is-1">{title}</TitleText>
         </Title>
         <ImageContainer>
           <ImageBox>
-            <img src={img} alt="impressionism" />
+            <img src={image} alt="impressionism" />
           </ImageBox>
         </ImageContainer>
         <Description>
-          <DescriptionText>
-            Impressionism is a 19th-century art movement characterized by
-            relatively small, thin, yet visible brush strokes, open composition,
-            emphasis on accurate depiction of light in its changing qualities
-            (often accentuating the effects of the passage of time), ordinary
-            subject matter, inclusion of movement as a crucial element of human
-            perception and experience, and unusual visual angles. Impressionism
-            originated with a group of Paris-based artists whose independent
-            exhibitions brought them to prominence during the 1870s and 1880s.
-          </DescriptionText>
+          <DescriptionText>{description}</DescriptionText>
         </Description>
       </Wrap>
     )
