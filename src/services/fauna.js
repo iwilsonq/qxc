@@ -10,3 +10,12 @@ export const fetchPieces = () => {
     .then(res => res.data)
     .then(pieces => pieces.map(normalizeFauna))
 }
+
+export const submitAnswer = () => {
+  // return client.
+}
+
+// User
+   // [liked_piece_id]
+   // [disliked_piece_id]
+

@@ -1,30 +1,36 @@
 import React from 'react'
 import { Link } from 'gatsby'
-
 import styled from 'react-emotion'
-
 import netlifyIdentity from 'netlify-identity-widget'
 
-const toggleLogin = e => {
-  e.preventDefault()
+class Header extends React.Component {
+  componentDidMount() {
+    netlifyIdentity.init(user => console.log(user))
+  }
 
-  netlifyIdentity.open()
+  handleIdentity = e => {
+    e.preventDefault()
+    netlifyIdentity.open()
+  }
+
+  render() {
+    const { siteTitle } = this.props
+    return (
+      <Wrap>
+        <div className="container">
+          <LinkContainer>
+            <h1 style={{ margin: 0 }}>
+              <MainLink to="/">{siteTitle}</MainLink>
+            </h1>
+            <LoginButton onClick={this.handleIdentity} className="button">
+              Login
+            </LoginButton>
+          </LinkContainer>
+        </div>
+      </Wrap>
+    )
+  }
 }
-
-const Header = ({ siteTitle }) => (
-  <Wrap>
-    <div className="container">
-      <LinkContainer>
-        <h1 style={{ margin: 0 }}>
-          <MainLink to="/">{siteTitle}</MainLink>
-        </h1>
-        <LoginButton onClick={toggleLogin} className="button">
-          Login
-        </LoginButton>
-      </LinkContainer>
-    </div>
-  </Wrap>
-)
 
 export default Header
 
