@@ -1,15 +1,22 @@
 <template>
-  <div v-if="activeURL" class="container">
-    <div class="image-container">
-      <img :src="activeURL" :alt="activePiece && (activePiece.title || '')">
-    </div>
-    <div class="buttons">
-      <button @click="clickHandler(false)" class="button is-dark is-large button--no">
-          <font-awesome-icon :icon="['fas','times']" :style="{ color: '#FFBDBD' }"/>
-      </button>
-      <button @click="clickHandler(true)" class="button is-dark is-large button--yes">
-          <font-awesome-icon :icon="['fas','check']" :style="{ color: '#50E3C2' }"/>
-      </button>
+  <div v-if="activeURL">
+    <div class="bar" :style="{width: progress}"/>
+    <div class="container">
+      <div class="image-container">
+        <img class="image" :src="activeURL" :alt="activePiece && (activePiece.title || '')">
+        <!-- <div :style="{'background-image': `url(${activeURL})`}" class="image"/> -->
+      </div>
+      <div class="info">
+        <span class="title is-4">{{activePiece.title || ''}}</span>
+      </div>
+      <div class="buttons">
+        <div @click="clickHandler(false)" class="button--no">
+            <font-awesome-icon :icon="['fas','times']" size="4x"/>
+        </div>
+        <div @click="clickHandler(true)" class="button--yes">
+            <font-awesome-icon :icon="['fas','check']" size="4x"/>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -40,24 +47,23 @@ export default {
   },
   computed: {
     activePiece() {
-      return this.pieces[this.index]
+      return this.pieces[this.index] || { title: 'boo' }
     },
     activeURL() {
-      return getUrl(this.activePiece || { title: 'boo' })
+      return getUrl(this.activePiece)
+    },
+    progress() {
+      return `${(this.index + 1) * 100 / this.pieces.length}%`
     }
   },
   methods: {
-    clickHandler(liked) {
+    async clickHandler(liked) {
       const answer = {}
       answer[this.activePiece.id] = liked
-      if(this.submitAnswer(answer)) {
-        this.index = (this.index + 1) % this.pieces.length
-        if(!this.index) {
-          // all images displayed and need more
-          this.fetchPieces().then(pieces => this.pieces = pieces)
-        }
-      }
-      else {
+      await this.submitAnswer(answer)
+      this.index++
+      if(this.index >= this.pieces.length) {
+        // this.fetchPieces().then(pieces => this.pieces = pieces)
         this.navigate('/impressions')
       }
     }
@@ -79,7 +85,7 @@ export default {
   align-items: center;
 }
 .buttons {
-  margin-top: 145px;
+  margin-top: 110px;
   width: 925px;
   display: flex;
   justify-content: space-between;
@@ -90,6 +96,22 @@ export default {
   width: 100%;
   background-color: black;
   padding: 35px;
+}
+.image {
+  background-size: cover;
+  margin: 0;
+}
+.buttons svg {
+  color: black;
+  cursor: pointer
+}
+.bar {
+  background-color: #f00;
+  height: 6px;
+}
+.info {
+  margin-top: 10px;
+  width: 100%;
 }
 </style>
 
