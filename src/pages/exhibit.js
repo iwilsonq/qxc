@@ -2,7 +2,7 @@ import React from 'react'
 import { navigate } from 'gatsby'
 import { VueInReact } from 'vuera'
 import Exhibit from '../components/Exhibit.vue'
-import { fetchPieces } from '../services/pieces'
+import { fetchPieces } from '../services/fauna'
 
 import Layout from '../components/Layout'
 const Comp = VueInReact(Exhibit)

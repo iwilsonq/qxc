@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import Layout from '../components/layout'
-// import Image from '../components/image'
-import LandingPage from './LandingPage'
+import { fetchPieces } from '../services/fauna'
+import Layout from '../components/Layout'
+import LandingPage from '../components/LandingPage'
 
 const IndexPage = () => (
   <Layout>
