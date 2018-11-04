@@ -31,14 +31,14 @@ export class ImpressionsGalleries extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div style={{ marginLeft: 75, marginBottom: 64}}>
         <Wrap className="columns">
-          <div className="column is-6">{this.renderGaleries()}</div>
+          <div className="column is-6" style={{maxHeight: '100vh', overflow: 'scroll'}}>{this.renderGaleries()}</div>
           <div className="column is-6">
             <div
-              style={{ backgroundColor: '#000', width: '100%', height: '100%' }}
+              style={{ backgroundColor: '#000', width: '100%', height: '100%', padding: 50 }}
             >
-              <MapView galleries={galleries} style={{ width: 100 }} />
+              <MapView galleries={this.props.galleries} />
             </div>
           </div>
         </Wrap>
@@ -65,7 +65,7 @@ const TitleText = styled('h3')`
 `
 
 const Gallery = styled('div')`
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 `
 
 const Info = styled('div')`

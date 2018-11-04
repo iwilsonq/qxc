@@ -5,6 +5,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import netlifyIdentity from 'netlify-identity-widget'
+import 'leaflet/dist/leaflet.css'
 
 window.netlifyIdentity = netlifyIdentity
 
