@@ -5,7 +5,7 @@ import styled from 'react-emotion'
 class Header extends React.Component {
   handleIdentity = e => {
     e.preventDefault()
-    netlifyIdentity.open()
+    // netlifyIdentity.open()
   }
 
   render() {

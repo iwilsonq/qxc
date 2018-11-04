@@ -1,10 +1,10 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import ImpressionsPage from '../components/ImpressionsPage'
+import Impressions from '../components/Impressions'
 
 const ImpressionsPage = () => (
   <Layout>
-    <ImpressionsPage />
+    <Impressions />
   </Layout>
 )
 
