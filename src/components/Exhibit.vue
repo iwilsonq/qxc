@@ -24,7 +24,7 @@
 
 <script>
 function getUrl({title}) {
-  return `https://via.placeholder.com/900x400?text=${title}`
+  return `https://via.placeholder.com/1024x576?text=${title}`
 }
 export default {
   name: 'exhibit',
@@ -79,7 +79,7 @@ export default {
 <style>
 .container {
   width: 100%;
-  max-width: 925px;
+  max-width: 1024;
   height: 100%;
   display: flex;
   flex-direction: column;
