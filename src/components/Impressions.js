@@ -21,8 +21,8 @@ const galleries = [
     lng: 122.6194,
   },
   {
-    galleryId: '124',
-    title: 'Picasso Arts',
+    galleryId: '125',
+    title: 'Picasso Arts 2',
     fullAddress: '121 Folsom street, San Francisco, CA',
     score: 0, // just a suggestion
 
@@ -30,8 +30,8 @@ const galleries = [
     lng: 122.6194,
   },
   {
-    galleryId: '124',
-    title: 'Picasso Arts',
+    galleryId: '126',
+    title: 'Picasso Arts 3',
     fullAddress: '121 Folsom street, San Francisco, CA',
     score: 0,
 
@@ -44,8 +44,10 @@ export class Impressions extends Component {
   render() {
     return (
       <Wrap>
-        <div>Map</div>
-        <div>list of galleries</div>
+        <div>Mathced Galleries</div>
+        {galleries.map(g => {
+          return <div key={g.id}>{g.title}</div>
+        })}
       </Wrap>
     )
   }
