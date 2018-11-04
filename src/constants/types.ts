@@ -19,6 +19,22 @@ type Piece = {
   artist: Artist
 }
 
+interface ImpressionsPage {
+  galleries: GalleryImpression[]
+}
+
+type GalleryImpression = {
+  galleryId: string
+  title: string
+  fullAddress: string
+  score: number
+  phone: string
+  pieces: Piece[]
+
+  lat: 37.7749,
+  lng: 122.4194,
+}
+
 type Gallery = {
   title: string
   fullAddress: string

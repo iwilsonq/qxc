@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'react-emotion'
+import axios from 'axios'
 
 import ImpressionsDescription from './ImpressionsDescription'
 import ImpressionsGalleries from './ImpressionsGalleries'
@@ -11,6 +12,7 @@ const galleries = [
     fullAddress: '1238 Somestreet, San Francisco, CA',
     phone: '415-397-8114',
     score: 3, // liked the most art from that gallery
+    pieces: [],
 
     lat: 37.7749,
     lng: 122.4194,
@@ -48,7 +50,19 @@ const galleries = [
 ]
 
 export class Impressions extends Component {
+  state = {
+    galleries: [],
+  }
+
+  componentDidMount() {
+    axios
+      .get('/.netlify/functions/impressions')
+      .then(response => console.log(response))
+      .then((response) => this.setState({ galleries: response }))
+  }
+
   render() {
+    console.log(`this.state.galleries`, this.state.galleries)
     const description = `Impressionism is a 19th-century art movement characterized by
     relatively small, thin, yet visible brush strokes, open composition,
     emphasis on accurate depiction of light in its changing qualities
