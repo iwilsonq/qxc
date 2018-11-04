@@ -1,9 +1,8 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { VueInReact } from 'vuera'
 import VueDemo from '../components/VueDemo.vue'
 
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 const Comp = VueInReact(VueDemo)
 const data = ['react', 'vue', 'angular']
 
