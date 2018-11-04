@@ -1,7 +1,6 @@
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 exports.onCreateWebpackConfig = ({ actions }) => {
-  console.log('vue', VueLoaderPlugin)
   actions.setWebpackConfig({
     module: {
       rules: [

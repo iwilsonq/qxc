@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "qxc",
+  "description": "Tinder for Artwork. freeCodeCamp JAMStack hackathon",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Ian Wilson <iwilsonq@gmail.com>",
   "dependencies": {
     "buefy": "^0.7.0",
     "gatsby": "^2.0.19",
@@ -37,6 +37,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/iwilsonq/qxc"
   }
 }
