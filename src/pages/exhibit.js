@@ -1,12 +1,11 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { navigate } from 'gatsby'
 import { VueInReact } from 'vuera'
 import Exhibit from '../components/Exhibit.vue'
 import { fetchPieces } from '../services/pieces'
 
 import Layout from '../components/Layout'
 const Comp = VueInReact(Exhibit)
-const data = ['react', 'vue', 'angular']
 
 let counter = 0
 
@@ -17,7 +16,7 @@ const submitAnswer = answer => {
 
 const ExhibitPage = () => (
   <Layout>
-    <Comp fetchPieces={fetchPieces} submitAnswer={submitAnswer} />
+    <Comp navigate={navigate} fetchPieces={fetchPieces} submitAnswer={submitAnswer} />
   </Layout>
 )
 
