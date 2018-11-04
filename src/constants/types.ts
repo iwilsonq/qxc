@@ -1,5 +1,12 @@
 type User = {
   id: string
+  impressions: Impression[]
+}
+
+type Impression = {
+  pieceId: '123',
+  // -1 dislike, 0 undo|clear state, 1 like
+  score: -1
 }
 
 type Artist = {
@@ -19,14 +26,7 @@ type Piece = {
 
 type Gallery = {
   title: string
+  fullAddress: string
   lat: number
   lng: number
-}
-
-type Impression = {
-  userId: string
-  impressions: {
-    _pieceId: number // not sure if we should build it as an object wtih
-    // keys being pieceId and value being a score
-  }
 }

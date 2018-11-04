@@ -1,44 +1,62 @@
 import React from 'react'
-import { Link } from './Link'
+import { Link } from 'gatsby'
+import styled from 'react-emotion'
+import netlifyIdentity from 'netlify-identity-widget'
 
-const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: '#FF9393',
-      marginBottom: '1.45rem',
-      padding: 12,
-    }}
-  >
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        margin: '0 auto',
-        maxWidth: 960,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-      <nav style={{ display: 'flex' }}>
-        <div style={{ marginRight: 12 }}>
-          <Link to="/exhibit">Exhibit</Link>
+class Header extends React.Component {
+  componentDidMount() {
+    netlifyIdentity.init(user => console.log(user))
+  }
+
+  handleIdentity = e => {
+    e.preventDefault()
+    netlifyIdentity.open()
+  }
+
+  render() {
+    const { siteTitle } = this.props
+    return (
+      <Wrap>
+        <div className="container">
+          <LinkContainer>
+            <h1 style={{ margin: 0 }}>
+              <MainLink to="/">{siteTitle}</MainLink>
+            </h1>
+            <LoginButton onClick={this.handleIdentity} className="button">
+              Login
+            </LoginButton>
+          </LinkContainer>
         </div>
-        <div>
-          <Link to="/">Login</Link>
-        </div>
-      </nav>
-    </div>
-  </div>
-)
+      </Wrap>
+    )
+  }
+}
 
 export default Header
+
+const Wrap = styled('div')`
+  background-color: #ff9393;
+`
+
+const LinkContainer = styled('div')`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`
+
+const MainLink = styled(Link)`
+  padding: 16px 0;
+  display: block;
+  color: #fff;
+  font-family: 'BayerUniversal';
+  font-size: 35px;
+`
+
+const LoginButton = styled('button')`
+  padding: 16px 0;
+  border: none;
+  background: none;
+  color: #fff;
+  font-family: 'BayerUniversal';
+  font-size: 35px;
+`
