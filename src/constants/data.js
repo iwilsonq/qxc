@@ -2,91 +2,91 @@ export const MOCK_PIECES = [
   {
     id: '1',
     title: 'Ancient cave painting',
-    artMovement: 'bce',
+    movement: 'bce',
   },
 
   {
     id: '2',
     title: 'Venus of Willendorf',
-    artMovement: 'bce',
+    movement: 'bce',
   },
 
   {
     id: '3',
     title: 'King Edgar',
-    artMovement: 'middle ages',
+    movement: 'middle ages',
   },
 
   {
     id: '4',
     title: 'Disk Thrower',
-    artMovement: 'ancient greece',
+    movement: 'ancient greece',
   },
 
   {
     id: '5',
     title: 'Birth of Venus by Botticelli',
-    artMovement: 'Renaissance',
+    movement: 'Renaissance',
   },
 
   {
     id: '6',
     title: 'Mona Lisa by Da Vinci',
-    artMovement: 'Renaissance',
+    movement: 'Renaissance',
   },
 
   {
     id: '7',
     title: 'Liberty Leading the people by Delacroix',
-    artMovement: 'French Romanticism',
+    movement: 'French Romanticism',
   },
 
   {
     id: '8',
     title: 'The Swing by Jean-Honoré Fragonard',
-    artMovement: 'French Romanticism',
+    movement: 'French Romanticism',
   },
 
   {
     id: '9',
     title: 'Saturn Devouring his Son by Goya',
-    artMovement: 'Spanish Romanticism',
+    movement: 'Spanish Romanticism',
   },
 
   {
     id: '10',
     title: 'The Great Wave by Hokusai',
-    artMovement: 'ukiyo-e',
+    movement: 'ukiyo-e',
   },
 
   {
     id: '11',
     title: 'The Scream by Munch',
-    artMovement: 'impressionism',
+    movement: 'impressionism',
   },
 
   {
     id: '12',
     title: 'Violin and Grapes by Picasso',
-    artMovement: 'Cubism',
+    movement: 'Cubism',
   },
 
   {
     id: '13',
     title: 'Untitled by Rothko',
-    artMovement: 'Abstractionism',
+    movement: 'Abstractionism',
   },
 
   {
     id: '14',
     title: 'Sportsmen Figures by Malevich',
-    artMovement: 'Russian suprematism',
+    movement: 'Russian suprematism',
   },
 
   {
     id: '15',
     title: 'Campbell Soup by Warhol',
-    artMovement: 'Pop art',
+    movement: 'Pop art',
   },
 ]
 
