@@ -91,12 +91,12 @@ export const MOCK_PIECES = [
   {
     "title": 'Starry Night',
     "movement": 'Post-impressionism',
-    "url": "15.jpg"
+    "url": "16.jpg"
   },
   {
     "title": 'Kiss',
     "movement": 'Impressionism',
-    "url": "15.jpg"
+    "url": "17.jpg"
   }
 ]
 
