@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'QXC',
+    title: 'pre-postmodern',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

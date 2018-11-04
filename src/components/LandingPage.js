@@ -2,26 +2,33 @@ import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import styled from 'react-emotion'
 
+import EmailForm from '../components/Form'
+
+import video from '../../static/banksy_40_sec.mp4'
+
 export class LandingPage extends Component {
   render() {
-    const url =
-      'https://d5jmjyzrse4ui.cloudfront.net/720p/8yVVFUcKRvToitQ5hoiO4QFlkmthuHF5.mp4'
+    // const url =
+    //   'https://d5jmjyzrse4ui.cloudfront.net/720p/8yVVFUcKRvToitQ5hoiO4QFlkmthuHF5.mp4'
     return (
       <Wrap>
-        <BlackFrame>
-          <WhiteFrame>
-            <Video id="background-video" loop autoPlay>
-              <source src={url} type="video/mp4" />
-              <source src={url} type="video/ogg" />
-              Your browser does not support the video tag.
-            </Video>
-          </WhiteFrame>
-          <ButtonWrap>
-            <Link to={'/exhibit'}>
-              <button className="button is-danger is-large">Continue</button>
-            </Link>
-          </ButtonWrap>
-        </BlackFrame>
+        <div>
+          <BlackFrame>
+            <WhiteFrame>
+              <Video id="background-video" loop autoPlay>
+                <source src={video} type="video/mp4" />
+                <source src={video} type="video/ogg" />
+                Your browser does not support the video tag.
+              </Video>
+            </WhiteFrame>
+            <ButtonWrap>
+              <Link to={'/exhibit'}>
+                <button className="button is-danger is-large">Continue</button>
+              </Link>
+            </ButtonWrap>
+          </BlackFrame>
+          <EmailForm />
+        </div>
       </Wrap>
     )
   }
@@ -35,6 +42,7 @@ const Wrap = styled('div')`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 `
 
 const BlackFrame = styled('div')`
@@ -45,6 +53,7 @@ const BlackFrame = styled('div')`
   justify-content: center;
   overflow: hidden;
   position: relative;
+  margin-bottom: 40px;
 `
 
 const WhiteFrame = styled('div')`

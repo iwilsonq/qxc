@@ -23,8 +23,9 @@
 </template>
 
 <script>
-function getUrl({title}) {
-  return `https://via.placeholder.com/1024x576?text=${title}`
+const urlPrefix = "/assets"
+function getUrl({url}) {
+  return `${urlPrefix}/${url}`
 }
 export default {
   name: 'exhibit',
@@ -48,7 +49,7 @@ export default {
   },
   computed: {
     activePiece() {
-      return this.pieces[this.index] || { title: 'boo' }
+      return this.pieces[this.index] || { title: 'boo', url: '1.jpg' }
     },
     activeURL() {
       return getUrl(this.activePiece)
@@ -59,6 +60,7 @@ export default {
   },
   methods: {
     async clickHandler(liked) {
+      console.log(this.activePiece)
       const answer = {}
       answer[this.activePiece.id] = liked
       await this.submitAnswer(answer)
@@ -79,7 +81,8 @@ export default {
 <style>
 .container {
   width: 100%;
-  max-width: 1024;
+  max-width: 845px;
+  /* max-width: 676;  */
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -92,6 +95,9 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.captioned-image {
+  width: 100%;
 }
 .framed-image {
   margin-top: 110px;
