@@ -27,7 +27,7 @@ const Form = styled('div')`
   input {
     width: 450px;
     &:focus {
-      border-color: #dbdbdb;
+      border-color: #000;
       box-shadow: none;
     }
   }
