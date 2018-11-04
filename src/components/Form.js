@@ -1,16 +1,36 @@
 import React from 'react'
+import styled from 'react-emotion'
 
 const EmailForm = () => {
   return (
-    <div>
-      <h3>Wanna learn more?</h3>
-      <p>Sign up for updates</p>
-      <form action="https://formspree.io/iwilsonq@gmail.com" method="POST">
-        <input type="email" name="_replyto" />
-        <input type="submit" value="Send" />
-      </form>
-    </div>
+    <Form action="https://formspree.io/iwilsonq@gmail.com" method="POST">
+      <div className="field has-addons">
+        <div className="control">
+          <input
+            className="input"
+            type="text"
+            placeholder="enter your email to for exclusive updates"
+            name="_replyto"
+          />
+        </div>
+        <div className="control">
+          <button type="sybmit" className="button is-danger">
+            Send
+          </button>
+        </div>
+      </div>
+    </Form>
   )
 }
+
+const Form = styled('div')`
+  input {
+    width: 450px;
+    &:focus {
+      border-color: #dbdbdb;
+      box-shadow: none;
+    }
+  }
+`
 
 export default EmailForm
