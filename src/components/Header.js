@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
-
 import styled from 'react-emotion'
 
 import netlifyIdentity from 'netlify-identity-widget'
