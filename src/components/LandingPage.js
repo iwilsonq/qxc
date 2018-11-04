@@ -4,18 +4,20 @@ import styled from 'react-emotion'
 
 import EmailForm from '../components/Form'
 
+import video from '../../static/banksy_40_sec.mp4'
+
 export class LandingPage extends Component {
   render() {
-    const url =
-      'https://d5jmjyzrse4ui.cloudfront.net/720p/8yVVFUcKRvToitQ5hoiO4QFlkmthuHF5.mp4'
+    // const url =
+    //   'https://d5jmjyzrse4ui.cloudfront.net/720p/8yVVFUcKRvToitQ5hoiO4QFlkmthuHF5.mp4'
     return (
       <Wrap>
         <div>
           <BlackFrame>
             <WhiteFrame>
               <Video id="background-video" loop autoPlay>
-                <source src={url} type="video/mp4" />
-                <source src={url} type="video/ogg" />
+                <source src={video} type="video/mp4" />
+                <source src={video} type="video/ogg" />
                 Your browser does not support the video tag.
               </Video>
             </WhiteFrame>
