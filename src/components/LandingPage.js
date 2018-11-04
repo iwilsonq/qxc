@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import styled  from 'react-emotion'
-import { Link } from 'gatsby'
-// import {navigate} from 'gatsby'
+import styled from 'react-emotion'
 
 export class LandingPage extends Component {
   render() {
@@ -18,9 +16,7 @@ export class LandingPage extends Component {
             </Video>
           </WhiteFrame>
           <ButtonWrap>
-            <Link to="/exhibit" className="button is-danger is-large">
-              Continue
-            </Link>
+            <button className="button is-primary is-large">Continue</button>
           </ButtonWrap>
         </BlackFrame>
       </Wrap>

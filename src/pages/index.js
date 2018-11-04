@@ -1,8 +1,6 @@
 import React from 'react'
-
-import Layout from '../components/layout'
-// import Image from '../components/image'
-import LandingPage from './LandingPage'
+import Layout from '../components/Layout'
+import LandingPage from '../components/LandingPage'
 
 const IndexPage = () => (
   <Layout>
