@@ -1,4 +1,5 @@
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const webpack = require('webpack')
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -10,6 +11,6 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         },
       ],
     },
-    plugins: [new VueLoaderPlugin()],
+    plugins: [new VueLoaderPlugin(), new webpack.DefinePlugin({ "global.GENTLY": false })],
   })
 }
