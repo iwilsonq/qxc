@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import styled from 'react-emotion'
 
-class Header extends React.Component {
+export class Header extends Component {
+  componentDidMount() {
+    netlifyIdentity.on('init', user => console.log('init', user))
+  }
+
   handleIdentity = e => {
     e.preventDefault()
     netlifyIdentity.open()
+  }
+
+  loginUser = () => {
+    console.log('loginUser')
   }
 
   render() {
@@ -17,9 +25,11 @@ class Header extends React.Component {
             <h1 style={{ margin: 0 }}>
               <MainLink to="/">{siteTitle}</MainLink>
             </h1>
-            <LoginButton onClick={this.handleIdentity} className="button">
-              Login
-            </LoginButton>
+            <div>
+              <LoginButton onClick={this.handleIdentity} className="button">
+                Login
+              </LoginButton>
+            </div>
           </LinkContainer>
         </div>
       </Wrap>
@@ -37,6 +47,7 @@ const LinkContainer = styled('div')`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  padding: 0 15px;
 `
 
 const MainLink = styled(Link)`
