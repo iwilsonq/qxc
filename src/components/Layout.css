@@ -605,14 +605,12 @@ tt,
 code {
   background-color: hsla(0, 0%, 0%, 0.04);
   border-radius: 3px;
-  <<<<<<<HEAD
-  font-family: 'SFMono-Regular', Consolas, 'Roboto Mono',
+  <<<<<<<headfont-family: 'SFMono-Regular', Consolas, 'Roboto Mono',
     'Droid Sans Mono', 'Liberation Mono', Menlo, Courier, monospace;
   =======font-family: Arial, Helvetica, sans-serif, 'SFMono-Regular', Consolas,
     'Roboto Mono', 'Droid Sans Mono', 'Liberation Mono', Menlo, Courier,
     monospace;
-  >>>>>>>33f6097db4e788dbf59e041b1903b5da774be928
-  padding: 0;
+  >>>>>>>33f6097db4e788dbf59e041b1903b5da774be928padding: 0;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
 }
@@ -637,4 +635,16 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+button.button {
+  font-family: 'BayerUniversal';
+  transition: 0.3s;
+}
+button.button.is-danger {
+  background: #c02121;
+}
+
+button.button.is-danger:hover {
+  background: #df3c3c;
 }

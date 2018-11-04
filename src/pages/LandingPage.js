@@ -16,7 +16,7 @@ export class LandingPage extends Component {
             </Video>
           </WhiteFrame>
           <ButtonWrap>
-            <button className="button is-primary is-large">Continue</button>
+            <button className="button is-danger is-large">Continue</button>
           </ButtonWrap>
         </BlackFrame>
       </Wrap>
