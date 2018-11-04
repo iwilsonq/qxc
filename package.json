@@ -1,10 +1,12 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "qxc",
+  "description": "Tinder for Artwork. freeCodeCamp JAMStack hackathon",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Ian Wilson <iwilsonq@gmail.com>",
   "dependencies": {
     "buefy": "^0.7.0",
+    "bulma": "^0.7.2",
+    "emotion": "^9.2.12",
     "gatsby": "^2.0.19",
     "gatsby-image": "^2.0.15",
     "gatsby-plugin-manifest": "^2.0.5",
@@ -15,6 +17,7 @@
     "gatsby-transformer-sharp": "^2.1.4",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
+    "react-emotion": "^9.2.12",
     "react-helmet": "^5.2.0",
     "vue": "^2.5.17",
     "vuera": "^0.2.3"
@@ -37,6 +40,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/iwilsonq/qxc"
   }
 }

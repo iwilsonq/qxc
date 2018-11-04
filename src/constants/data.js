@@ -11,6 +11,7 @@ export const MOCK_PIECES = [
 
   {
     title: 'King Edgar',
+    movement: 'middle ages',
   },
 
   {
