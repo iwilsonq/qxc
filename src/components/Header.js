@@ -10,7 +10,7 @@ export class Header extends Component {
 
   handleIdentity = e => {
     e.preventDefault()
-    // netlifyIdentity.open()
+    netlifyIdentity.open()
   }
 
   loginUser = () => {
