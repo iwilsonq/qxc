@@ -44,6 +44,9 @@ export class Impressions extends Component {
   render() {
     return (
       <Wrap>
+        <Title>
+          <TitleText className="title is-2">Expresstions</TitleText>
+        </Title>
         <div>Mathced Galleries</div>
         {galleries.map(g => {
           return <div key={g.id}>{g.title}</div>
@@ -60,3 +63,5 @@ const Wrap = styled('div')`
   height: calc(100vh - 98px);
   justify-content: center;
 `
+const Title = styled('div')``
+const TitleText = styled('h2')``
