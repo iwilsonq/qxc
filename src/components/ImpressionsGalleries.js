@@ -2,51 +2,9 @@ import React, { Component } from 'react'
 import styled from 'react-emotion'
 import galleryImage from '../../assets/group.png'
 
-const galleries = [
-  {
-    galleryId: '123',
-    title: 'Grand Gallery',
-    fullAddress: '1238 Somestreet, San Francisco, CA',
-    phone: '415-397-8114',
-    score: 3, // liked the most art from that gallery
-
-    lat: 37.7749,
-    lng: 122.4194,
-  },
-  {
-    galleryId: '124',
-    title: 'Picasso Arts',
-    fullAddress: '121 Folsom street, San Francisco, CA',
-    score: 1, // liked only 1 piece
-    phone: '415-397-8114',
-
-    lat: 37.2749,
-    lng: 122.6194,
-  },
-  {
-    galleryId: '125',
-    title: 'Picasso Arts 2',
-    fullAddress: '121 Folsom street, San Francisco, CA',
-    score: 0, // just a suggestion
-    phone: '415-397-8114',
-
-    lat: 37.2749,
-    lng: 122.6194,
-  },
-  {
-    galleryId: '126',
-    title: 'Picasso Arts 3',
-    fullAddress: '121 Folsom street, San Francisco, CA',
-    score: 0,
-    phone: '415-397-8114',
-
-    lat: 37.2749,
-    lng: 122.6194,
-  },
-]
-
 export class ImpressionsGalleries extends Component {
   renderGaleries() {
+    const { galleries } = this.props
     return galleries.map(g => {
       return (
         <Gallery key={g.galleryId}>
