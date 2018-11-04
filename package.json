@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "author": "Ian Wilson <iwilsonq@gmail.com>",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.8",
+    "@fortawesome/free-solid-svg-icons": "^5.5.0",
+    "@fortawesome/vue-fontawesome": "^0.1.2",
     "buefy": "^0.7.0",
     "gatsby": "^2.0.19",
     "gatsby-image": "^2.0.15",
@@ -13,6 +16,8 @@
     "gatsby-plugin-sharp": "^2.0.7",
     "gatsby-source-filesystem": "^2.0.4",
     "gatsby-transformer-sharp": "^2.1.4",
+    "i": "^0.3.6",
+    "npm": "^6.4.1",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",

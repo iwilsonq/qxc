@@ -1,14 +1,14 @@
 <template>
   <div v-if="activeURL" class="container">
-    <img :src="activeURL" class="image">
+    <div class="image-container">
+      <img :src="activeURL" :alt="activePiece && (activePiece.title || '')">
+    </div>
     <div class="buttons">
       <button @click="clickHandler(false)" class="button is-dark is-large button--no">
-          <!-- <b-icon pack="fas" icon="check"></b-icon> -->
-          <span>No</span>
+          <font-awesome-icon :icon="['fas','times']" :style="{ color: '#FFBDBD' }"/>
       </button>
       <button @click="clickHandler(true)" class="button is-dark is-large button--yes">
-          <!-- <b-icon pack="fas" icon="check"></b-icon> -->
-          <span>Yes</span>
+          <font-awesome-icon :icon="['fas','check']" :style="{ color: '#50E3C2' }"/>
       </button>
     </div>
   </div>
@@ -79,10 +79,17 @@ export default {
   align-items: center;
 }
 .buttons {
+  margin-top: 145px;
   width: 925px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.image-container {
+  margin-top: 110px;
+  width: 100%;
+  background-color: black;
+  padding: 35px;
 }
 </style>
 
