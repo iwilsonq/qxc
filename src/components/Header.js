@@ -1,5 +1,4 @@
 import React from 'react'
-// import { Link } from './Link'
 import { Link } from 'gatsby'
 
 import styled from 'react-emotion'
