@@ -1,9 +1,13 @@
 <template>
   <div v-if="activeURL">
+    <div class="bar" :style="{width: progress}"/>
     <div class="container">
       <div class="image-container">
         <img class="image" :src="activeURL" :alt="activePiece && (activePiece.title || '')">
         <!-- <div :style="{'background-image': `url(${activeURL})`}" class="image"/> -->
+      </div>
+      <div class="info">
+        <span class="title is-4">{{activePiece.title || ''}}</span>
       </div>
       <div class="buttons">
         <div @click="clickHandler(false)" class="button--no">
@@ -43,10 +47,13 @@ export default {
   },
   computed: {
     activePiece() {
-      return this.pieces[this.index]
+      return this.pieces[this.index] || { title: 'boo' }
     },
     activeURL() {
-      return getUrl(this.activePiece || { title: 'boo' })
+      return getUrl(this.activePiece)
+    },
+    progress() {
+      return `${(this.index + 1) * 100 / this.pieces.length}%`
     }
   },
   methods: {
@@ -54,8 +61,8 @@ export default {
       const answer = {}
       answer[this.activePiece.id] = liked
       await this.submitAnswer(answer)
-      this.index = (this.index + 1) % this.pieces.length
-      if(!this.index) {
+      this.index++
+      if(this.index >= this.pieces.length) {
         // this.fetchPieces().then(pieces => this.pieces = pieces)
         this.navigate('/impressions')
       }
@@ -78,7 +85,7 @@ export default {
   align-items: center;
 }
 .buttons {
-  margin-top: 145px;
+  margin-top: 110px;
   width: 925px;
   display: flex;
   justify-content: space-between;
@@ -94,12 +101,17 @@ export default {
   background-size: cover;
   margin: 0;
 }
-.button--no {
-  cursor: pointer;
+.buttons svg {
+  color: black;
+  cursor: pointer
 }
 .bar {
   background-color: #f00;
-  height: 20px;
+  height: 6px;
+}
+.info {
+  margin-top: 10px;
+  width: 100%;
 }
 </style>
 

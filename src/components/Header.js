@@ -42,6 +42,7 @@ const LinkContainer = styled('div')`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  padding: 0 15px;
 `
 
 const MainLink = styled(Link)`
