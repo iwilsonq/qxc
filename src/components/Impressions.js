@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'react-emotion'
-import MapView from '../components/MapView'
 
 import ImpressionsDescription from './ImpressionsDescription'
 import ImpressionsGalleries from './ImpressionsGalleries'
