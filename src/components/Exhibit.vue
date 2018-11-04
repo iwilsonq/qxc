@@ -1,15 +1,18 @@
 <template>
-  <div v-if="activeURL" class="container">
-    <div class="image-container">
-      <img :src="activeURL" :alt="activePiece && (activePiece.title || '')">
-    </div>
-    <div class="buttons">
-      <button @click="clickHandler(false)" class="button is-dark is-large button--no">
-          <font-awesome-icon :icon="['fas','times']" :style="{ color: '#FFBDBD' }"/>
-      </button>
-      <button @click="clickHandler(true)" class="button is-dark is-large button--yes">
-          <font-awesome-icon :icon="['fas','check']" :style="{ color: '#50E3C2' }"/>
-      </button>
+  <div v-if="activeURL">
+    <div class="container">
+      <div class="image-container">
+        <img class="image" :src="activeURL" :alt="activePiece && (activePiece.title || '')">
+        <!-- <div :style="{'background-image': `url(${activeURL})`}" class="image"/> -->
+      </div>
+      <div class="buttons">
+        <div @click="clickHandler(false)" class="button--no">
+            <font-awesome-icon :icon="['fas','times']" size="4x"/>
+        </div>
+        <div @click="clickHandler(true)" class="button--yes">
+            <font-awesome-icon :icon="['fas','check']" size="4x"/>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -47,17 +50,13 @@ export default {
     }
   },
   methods: {
-    clickHandler(liked) {
+    async clickHandler(liked) {
       const answer = {}
       answer[this.activePiece.id] = liked
-      if(this.submitAnswer(answer)) {
-        this.index = (this.index + 1) % this.pieces.length
-        if(!this.index) {
-          // all images displayed and need more
-          this.fetchPieces().then(pieces => this.pieces = pieces)
-        }
-      }
-      else {
+      await this.submitAnswer(answer)
+      this.index = (this.index + 1) % this.pieces.length
+      if(!this.index) {
+        // this.fetchPieces().then(pieces => this.pieces = pieces)
         this.navigate('/impressions')
       }
     }
@@ -90,6 +89,17 @@ export default {
   width: 100%;
   background-color: black;
   padding: 35px;
+}
+.image {
+  background-size: cover;
+  margin: 0;
+}
+.button--no {
+  cursor: pointer;
+}
+.bar {
+  background-color: #f00;
+  height: 20px;
 }
 </style>
 

@@ -10,8 +10,9 @@ const Comp = VueInReact(Exhibit)
 let counter = 0
 
 const submitAnswer = answer => {
-  console.log(JSON.stringify(answer, null, 3))
-  return counter++ < 10
+  console.log(answer)
+  const result = counter++ < 10
+  return new Promise(resolve => resolve(result))
 }
 
 const ExhibitPage = () => (
