@@ -60,13 +60,11 @@ export default {
   },
   methods: {
     async clickHandler(liked) {
-      console.log(this.activePiece)
       const answer = {}
       answer[this.activePiece.id] = liked
       await this.submitAnswer(answer)
       this.index++
       if(this.index >= this.pieces.length) {
-        // this.fetchPieces().then(pieces => this.pieces = pieces)
         this.navigate('/impressions')
       }
     }

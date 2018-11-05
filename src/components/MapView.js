@@ -4,6 +4,10 @@ import { Map, TileLayer, Marker } from 'react-leaflet'
 const MapView = props => {
   const initialPosition = [37.7841353, -122.3956773] // github office
   const zoom = 13
+  if (typeof window === 'undefined') {
+    return null
+  }
+  
   return (
     <Map center={initialPosition} zoom={zoom} style={{ height: '100%' }}>
       <TileLayer
